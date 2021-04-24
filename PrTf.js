@@ -194,7 +194,7 @@ dragAndDropMobile();
 // перемещение кнопочки контактов по скролу
 let footerBlock = document.querySelector(".link");
 
-footerBlock.onscroll = function () {
+window.onscroll = function () {
   moveContactScroll();
 };
 
