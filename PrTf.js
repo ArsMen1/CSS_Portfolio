@@ -152,7 +152,7 @@ const dragAndDropMobile = () => {
     let touch = event.targetTouches[0];
     drag.style.top = `${
       touch.pageY - wrapper.offsetTop * 1.13 /*- (drag.offsetWidth / 2)*/
-    }px`;
+    }px`; //Здесь значение 1,13 подобранно методом тыка
     drag.style.left = `${touch.pageX - drag.width / 2}px`;
 
     empty.map((item) => {
@@ -176,7 +176,7 @@ const dragAndDropMobile = () => {
 
   //Проверить нужно ли эта функция на мобилке, вдруг компьютерный браузер неправитльно понимает дейстаие touchEnd
   /*function touchEnd(element) {
-  if (itemAppend.classList.contains('hovered')) {
+  if (itemAppend.classList.contains('hovered')) {// если блок имеет класс hovered
     itemAppend.append(this);
     this.style.top = `${itemAppend.offsetTop}px`;
     this.style.left = `${itemAppend.offsetLeft}px`;
@@ -192,10 +192,20 @@ dragAndDropMobile();
 //Конец Перетаскивание картинок на мобилке
 
 // перемещение кнопочки контактов по скролу
-const moveContactScroll = () => {
-  document.querySelector(".fab");
+let footerBlock = document.querySelector(".link");
+
+footerBlock.onscroll = function () {
+  moveContactScroll();
 };
-moveContactScroll();
+
+const moveContactScroll = () => {
+  let windowScroll =
+      document.body.scrollTop || document.documentElement.scrollTop,
+    contactIcon = document.querySelector(".fab");
+
+  contactIcon.style.right = windowScroll + "px";
+};
+
 //Конец перемещение кнопочки контактов по скролу
 
 // Найти все ссылки начинающиеся на #
