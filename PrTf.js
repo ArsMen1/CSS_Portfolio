@@ -192,15 +192,14 @@ dragAndDropMobile();
 //Конец Перетаскивание картинок на мобилке
 
 // перемещение кнопочки контактов по наведению на футер с помощью jquery.attr
-$(".link").hover(
+$(".link, .fab").hover(
   () => {
-    $(".fab").attr("style", "right:50vw; transition-duration: 1s;");
+    $(".fab").attr("style", "right:40vw; transition-duration: 1s;");
   },
   () => {
     $(".fab").attr("style", "right:10px; transition-duration: 1s;");
   }
 );
-
 //Конец перемещение кнопочки контактов по скролу
 
 // Найти все ссылки начинающиеся на #

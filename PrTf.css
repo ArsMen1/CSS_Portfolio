@@ -547,9 +547,31 @@ figure {
 /*Конец иконки для связи*/
 
 .link {
-  background-color: #000;
+  background-color: rgb(54, 54, 54);
+  color: #fff;
   width: 99vw;
-  height: 25vh;
+  height: 30vh;
+}
+
+.divLogo {
+  padding-left: 45vw;
+}
+
+.logo {
+  height: 15vh;
+  width: 5vw;
+}
+
+.logo:hover {
+  transform: rotate(90deg);
+  transition-duration: 500ms;
+}
+
+.invitation,
+.number,
+.email {
+  padding-left: 10vw;
+  font-size: 2vw;
 }
 
 /*Верстка для мобилки*/
