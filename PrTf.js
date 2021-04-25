@@ -191,20 +191,15 @@ const dragAndDropMobile = () => {
 dragAndDropMobile();
 //Конец Перетаскивание картинок на мобилке
 
-// перемещение кнопочки контактов по скролу
-let footerBlock = document.querySelector(".link");
-
-window.onscroll = function () {
-  moveContactScroll();
-};
-
-const moveContactScroll = () => {
-  let windowScroll =
-      document.body.scrollTop || document.documentElement.scrollTop,
-    contactIcon = document.querySelector(".fab");
-
-  contactIcon.style.right = windowScroll + "px";
-};
+// перемещение кнопочки контактов по наведению на футер с помощью jquery.attr
+$(".link").hover(
+  () => {
+    $(".fab").attr("style", "right:50vw; transition-duration: 1s;");
+  },
+  () => {
+    $(".fab").attr("style", "right:10px; transition-duration: 1s;");
+  }
+);
 
 //Конец перемещение кнопочки контактов по скролу
 
