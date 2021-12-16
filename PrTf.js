@@ -182,7 +182,7 @@ const dragAndDropMobile = () => {
     this.style.left = `${itemAppend.offsetLeft}px`;
   }
   else {
-    this.style.top = `${itemAppend.offsetTop}px`;
+    this.style.top =  `${itemAppend.offsetTop}px`;
     this.style.left = `${itemAppend.offsetLeft}px`;
   }
 }
